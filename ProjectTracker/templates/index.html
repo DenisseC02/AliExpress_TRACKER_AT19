@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Product tracker</title>
+    </head>
+    <body>
+        {% include "header.html" %}
+        
+        <div class="search-box-container">  
+            
+            
+            <div class="search-box">  
+                {% load static %}
+                <img src="{% static '/home/danisku/Desktop/CODING/Jala-University-AT19/DjangoProjects/ProjectTracker/ProjectTracker/images/logo.png' %}" alt="AliExpress logo" width="300"/>
+                <h1>AliExpress Product Tracker</h1>
+                <div>
+                    <form action="" method="post">
+                        <input type="text" placeholder="What are you looking for?"><button type="submit" class="btn-search">Search</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    <style>
+        body {margin: 0;width: 100%;height:calc(90vh - 77px);}
+        h1 {color: gray;}
+        li {color: darkgray}
+        input {width:350px; margin-right: 5px;padding:5px;}
+        .search-box-container {width:90%;height:100%;display:flex;justify-content: center;justify-content: center;margin:50px}
+        .search-box {display:flex;flex-direction: column;align-items: center;}
+        .btn-search {padding:5px;cursor: pointer;}
+    </style>
+        {% include "footer.html" %}
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <body>
+        {% include "header.html" %}
+      <!--  <img src="logo.png" alt="" width="300"/>    -->  
+        <h1>Hola es mi primera plantilla</h1>
+        Mi nombre es {{user_name}} {{user_lastname}}
+        <p>Estamos viendo este curso el día: {{display_date.day}}/{{display_date.month}}/{{display_date.year}} </p>
+        Así se muestra la lista en bruto: {{pass_list}}
+        Para acceder a un elemento de la lista, usamos: nombre_lista.numero_elemento. Para nuetro ejemplo: pass_list.2 --> {{pass_list.2}}
+
+
+        {% comment %}
+            Dev Ignora esta parte
+        {% endcomment %}
+
+
+        <p>
+            <ul>
+            {% if pass_list %}
+                {% for item in pass_list %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            {% else %}
+                <b>La lista está vacía.</b>
+            {% endif %}
+            </ul>
+
+
+        </p>
+    <style>
+        h1 {color: gray;}
+        li {color: lightseagreen}
+    </style>
+
+    </body>
+</html>

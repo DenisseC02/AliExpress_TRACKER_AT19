@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Product tracker</title>
+    </head>
+    <body>
+        {% include "header.html" %}
+      <!--  <img src="logo.png" alt="" width="300"/>    -->
+        
+      <h2>Select a product to track and click on start tracking button</h2>
+         
+
+<!-- 
+    {{products_found.products}}
+------------------ 
+ -->
+    {% for product in products_found.products %}
+        <div class="product-container">
+        <div>
+          <a href="https://es.aliexpress.com/item/{{product.productID}}.html" target="_blank"><img src="{{product.image}}" alt="" width="200"/></a>
+          <a href="https://es.aliexpress.com/item/{{product.productID}}.html" target="_blank"><h4>{{product.title}}</h4></a>
+          Price: USD {{product.price}}<br>
+          Rating: {{product.rate}}<br>
+          <button type="submit">Start tracking</button>    
+        </div>
+        </div>
+    {% endfor %}
+    <style>
+        body {margin: 0;}
+
+        .product-container {margin:15px;padding: 15px;background-color: #f2f2f2;display:inline-flex;}
+        .product-container div a img:hover {transform: scale(1.05);}
+        .product-container button {padding:5px;cursor:pointer;margin-top: 15px;border:none; background-color:cadetblue;border-radius: 3px;color:white}
+        .product-container button:hover {border: 2px solid cadetblue;border-radius: 3px;font-weight: bold;}
+        .product-container div {width: 200px;}
+        .product-container div a {text-decoration: none;color:#333}
+        .product-container div a:hover {text-decoration: none;color:cadetblue}
+
+
+    </style>
+        {% include "footer.html" %}
+
+    </body>
+</html>
